@@ -48,7 +48,7 @@ automake -a -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
- 
+
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
 cp -f $RPM_BUILD_ROOT%{_prefix}/doc/%{name}/{AUTHORS,TODO,ChangeLog} .
