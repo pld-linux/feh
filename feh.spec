@@ -24,7 +24,7 @@ reload support for watching webcams), recursive file opening
 (slideshow of a directory hierarchy), and mousewheel/keyboard control.
 
 %description -l pl
-feh jest szybk±, lekk± przegl±rk± obrazów która wykorzystuje
+feh jest szybk±, lekk± przegl±dark± obrazów która wykorzystuje
 bibliotekê imlib2. Jest kierowana z linii poleceñ i obs³uguje wiele
 obrazów naraz przez "pokazy slajdów", przegl±danie miniatur lub wiele
 okienek na raz, oraz montowanie obrazów lub tworzenie indeksów
