@@ -1,16 +1,16 @@
 Summary:	Fast image viewer/indexer/montager
 Summary(pl):	Szybki program do przegl±dania/indeksowania/montowania obrazów
 Name:		feh
-Version:	1.2.6
+Version:	1.2.7
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	6d40889465181de51bb26fbbe57fbfac
+# Source0-md5:	a25a4ace719a69bab1df5929ad7b9716
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	giblib-devel
+BuildRequires:	giblib-devel >= 1.2.4
 BuildRequires:	imlib2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
