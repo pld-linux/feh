@@ -8,12 +8,11 @@ Group:		X11/Applications/Graphics
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	6d40889465181de51bb26fbbe57fbfac
 URL:		http://www.linuxbrit.co.uk/
-BuildRequires:	imlib2-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	giblib-devel
+BuildRequires:	imlib2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 feh is a fast, lightweight image viewer which uses imlib2. It is
@@ -44,13 +43,13 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
