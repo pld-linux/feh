@@ -41,7 +41,7 @@ oraz sterowanie z klawiatury/myszki (te¿ z kó³kiem).
 %build
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure
 
 %{__make}
