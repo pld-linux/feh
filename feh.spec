@@ -41,7 +41,7 @@ oraz sterowanie z klawiatury/myszki (te¿ z kó³kiem).
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
