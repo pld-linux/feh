@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	b25ca2ff5f5763d7962cd1082130ad18
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	imlib2-devel
 BuildRequires:	autoconf
