@@ -40,6 +40,7 @@ oraz sterowanie z klawiatury/myszki (te¿ z kó³kiem).
 %setup -q
 
 %build
+rm -f missing
 aclocal
 autoconf
 automake -a -c -f
@@ -47,13 +48,12 @@ automake -a -c -f
 
 %{__make}
 
+gzip -9nf AUTHORS TODO ChangeLog
+
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-
-cp -f $RPM_BUILD_ROOT%{_prefix}/doc/%{name}/{AUTHORS,TODO,ChangeLog} .
-gzip -9nf AUTHORS TODO ChangeLog
 
 %clean
 rm -rf $RPM_BUILD_ROOT
