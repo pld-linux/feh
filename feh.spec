@@ -48,8 +48,6 @@ rm -f missing
 
 %{__make}
 
-gzip -9nf AUTHORS TODO ChangeLog
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
@@ -60,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS TODO ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/feh
 %{_mandir}/man1/*
