@@ -11,6 +11,8 @@ Group(pt):	X11/Aplicações/Gráficos
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	imlib2-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -35,7 +37,6 @@ Zaawansowane opcje zawieraj± szybie powiêkszanie, ³adowanie stopniowe,
 ³adowanie przez HTTP (z opcj± prze³adowania do ogl±dania webcamów),
 rekursywne otwieranie plików (pokaz slajdów z hierarchii katalogów),
 oraz sterowanie z klawiatury/myszki (te¿ z kó³kiem).
-
 
 %prep
 %setup -q
