@@ -5,9 +5,6 @@ Version:	1.1.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Group(de):	X11/Applikationen/Grafik
-Group(pl):	X11/Aplikacje/Grafika
-Group(pt):	X11/Aplicações/Gráficos
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.linuxbrit.co.uk/
 BuildRequires:	imlib2-devel
