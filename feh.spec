@@ -7,7 +7,7 @@ License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	a1ccf81068b6ce28715c820b61952888
-URL:		http://www.linuxbrit.co.uk/
+URL:		http://www.linuxbrit.co.uk/feh/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	giblib-devel >= 1.2.4
