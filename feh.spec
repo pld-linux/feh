@@ -1,5 +1,5 @@
 Summary:	Fast image viewer/indexer/montager
-Summary(pl):	Szybki program do przegl±dania/indeksowania/montowania obrazów
+Summary(pl.UTF-8):   Szybki program do przeglÄ…dania/indeksowania/montowania obrazÃ³w
 Name:		feh
 Version:	1.3.4
 Release:	1
@@ -25,16 +25,16 @@ fast dynamic zooming, progressive loading, loading via HTTP (with
 reload support for watching webcams), recursive file opening
 (slideshow of a directory hierarchy), and mousewheel/keyboard control.
 
-%description -l pl
-feh jest szybk±, lekk± przegl±dark± obrazów która wykorzystuje
-bibliotekê imlib2. Jest kierowana z linii poleceñ i obs³uguje wiele
-obrazów naraz przez "pokazy slajdów", przegl±danie miniatur lub wiele
-okienek na raz, oraz montowanie obrazów lub tworzenie indeksów
-(wykorzystuj±c fonty TrueType do wy¶wietlania informacji o plikach).
-Zaawansowane opcje zawieraj± szybie powiêkszanie, ³adowanie stopniowe,
-³adowanie przez HTTP (z opcj± prze³adowania do ogl±dania webcamów),
-rekursywne otwieranie plików (pokaz slajdów z hierarchii katalogów),
-oraz sterowanie z klawiatury/myszki (te¿ z kó³kiem).
+%description -l pl.UTF-8
+feh jest szybkÄ…, lekkÄ… przeglÄ…darkÄ… obrazÃ³w ktÃ³ra wykorzystuje
+bibliotekÄ™ imlib2. Jest kierowana z linii poleceÅ„ i obsÅ‚uguje wiele
+obrazÃ³w naraz przez "pokazy slajdÃ³w", przeglÄ…danie miniatur lub wiele
+okienek na raz, oraz montowanie obrazÃ³w lub tworzenie indeksÃ³w
+(wykorzystujÄ…c fonty TrueType do wyÅ›wietlania informacji o plikach).
+Zaawansowane opcje zawierajÄ… szybie powiÄ™kszanie, Å‚adowanie stopniowe,
+Å‚adowanie przez HTTP (z opcjÄ… przeÅ‚adowania do oglÄ…dania webcamÃ³w),
+rekursywne otwieranie plikÃ³w (pokaz slajdÃ³w z hierarchii katalogÃ³w),
+oraz sterowanie z klawiatury/myszki (teÅ¼ z kÃ³Å‚kiem).
 
 %prep
 %setup -q
