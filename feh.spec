@@ -1,5 +1,5 @@
 Summary:	Fast image viewer/indexer/montager
-Summary(pl.UTF-8):   Szybki program do przeglądania/indeksowania/montowania obrazów
+Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
 Version:	1.3.4
 Release:	1
