@@ -14,7 +14,7 @@ BuildRequires:	giblib-devel >= 1.2.4
 BuildRequires:	imlib2-devel >= 1.0.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:  xorg-lib-libXt-devel
+BuildRequires:	xorg-lib-libXt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,7 +41,6 @@ oraz sterowanie z klawiatury/myszki (też z kółkiem).
 %setup -q
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
