@@ -1,3 +1,6 @@
+# TODO:
+# - bash completion
+# - add WallpaperChanger 'provide' to another programs that can change the wallpaper
 Summary:	Fast image viewer/indexer/montager
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
@@ -15,6 +18,7 @@ BuildRequires:	imlib2-devel >= 1.0.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	xorg-lib-libXt-devel
+Provides:	WallpaperChanger
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
