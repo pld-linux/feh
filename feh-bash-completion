@@ -1,0 +1,35 @@
+# feh bash_completition - made by uzsolt
+# TODO: add more file extensions
+
+_feh() 
+{
+	local cur
+
+	COMPREPLY=()
+	cur=${COMP_WORDS[COMP_CWORD]}
+
+	case "$cur" in
+	    -*)
+		COMPREPLY=( $( compgen -W ' -1 -2 -4 -5 -6 -7 -8 -9\
+                    -a -A --action1 --action2 --action3 --action4 --action5 --action6 --action7 --action8 --action9\
+                    --alpha --auto-zoom -b --bg --bg-center --bg-scale --bg-seamless --bg-tile --blur-button\
+                    --borderless --builtin -c --cache-thumbnails --caption-path --collage --customlist --cycle-once\
+                    -d -D --draw-filename -e -E -f -F --filelist --fontpath --fullindex --full-screen -g -G --geometry\
+                    -h -H --help --hide-pointer -i -I --ignore-aspect --index -j -k --keep-http -l -L --limit-height \
+                    --limit-width --list --loadable -m -M --menu-bg --menu-border --menu-button --menu-ctrl-mask \
+                    --menu-font --menu-style --montage --multiwindow -n -N --next-button --no-blur-ctrl-mask \
+                    --no-jump-on-resort --no-menus --no-rotate-ctrl-mask -o -O --output-dir -p --preload -q -Q \
+                    --quiet -r -R --randomize --rcfile --recursive --reload --reverse --rotate-button -s -S 
+                    --scale-down --screen-clip --slideshow-delay --sort --stretch -t -T --theme --thumb-height \
+                    --thumbnails --thumb-width --title --title-font -u -U --unloadable -v -V --verbose --version \
+                    -w -W --wget-timestamp -x -X --xinerama -y -z -Z --zoom --zoom-button' -- $cur ) )
+		;;
+	    *)
+                _filedir '@(jpg|jpeg|png|gif|bmp|JPG|JPEG|PNG|GIF|BMP)'
+		;;
+	esac
+  
+	return 0
+
+}
+complete -F _feh -o filenames feh
