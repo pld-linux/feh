@@ -1,16 +1,14 @@
-# TODO:
-# - bash completion
-# - add WallpaperChanger 'provide' to another programs that can change the wallpaper
 Summary:	Fast image viewer/indexer/montager
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
 Version:	1.3.4
-Release:	1
+Release:	2
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	3d35ba3d2f0693b019800787f1103891
 URL:		http://www.linuxbrit.co.uk/feh/
+Source1:	%{name}-bash-completion
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	giblib-devel >= 1.2.4
@@ -41,6 +39,14 @@ Zaawansowane opcje zawierają szybie powiększanie, ładowanie stopniowe,
 rekursywne otwieranie plików (pokaz slajdów z hierarchii katalogów),
 oraz sterowanie z klawiatury/myszki (też z kółkiem).
 
+%package bash-completion
+Summary:	bash-completion to feh
+Group:		Applications/Shells
+Requires:	bash-completion
+
+%description bash-completion
+bash-completion to feh
+
 %prep
 %setup -q
 
@@ -57,12 +63,19 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/%{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog TODO
+%doc AUTHORS COPYING ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/feh
 %{_mandir}/man1/*
+
+%files bash-completion
+%defattr(644,root,root,755)
+%{_sysconfdir}/bash_completion.d/%{name}
