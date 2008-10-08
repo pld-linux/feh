@@ -41,11 +41,15 @@ oraz sterowanie z klawiatury/myszki (też z kółkiem).
 
 %package bash-completion
 Summary:	bash-completion to feh
+Summary(pl.UTF-8):	bashowe dopełnianie linii poleceń programu feh
 Group:		Applications/Shells
 Requires:	bash-completion
 
 %description bash-completion
-bash-completion to feh
+bash-completion to feh.
+
+%description bash-completion -l pl.UTF-8
+bashowe dopełnianie linii poleceń programu feh.
 
 %prep
 %setup -q
