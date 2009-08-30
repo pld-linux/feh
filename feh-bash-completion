@@ -25,7 +25,7 @@ _feh()
                     -w -W --wget-timestamp -x -X --xinerama -y -z -Z --zoom --zoom-button' -- $cur ) )
 		;;
 	    *)
-                _filedir '@(jpg|jpeg|png|gif|bmp|ppm|JPG|JPEG|PNG|GIF|BMP|PPM)'
+                _filedir '@(jpg|jpeg|png|gif|bmp|ppm|xpm|JPG|JPEG|PNG|GIF|BMP|PPM)'
 		;;
 	esac
   
