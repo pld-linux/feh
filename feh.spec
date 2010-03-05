@@ -1,12 +1,12 @@
 Summary:	Fast image viewer/indexer/montager
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
-Version:	1.3.5
+Version:	1.4
 Release:	1
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
-# Source0-md5:	4f4af3138d635e3dc4553ff4ca550891
+# Source0-md5:	15963b996feed2d7d2213fa08c34ff1e
 # Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
 URL:		http://www.linuxbrit.co.uk/feh/
 Source1:	%{name}-bash-completion
