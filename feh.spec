@@ -7,8 +7,7 @@ License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
 # Source0-md5:	15963b996feed2d7d2213fa08c34ff1e
-# Source0:	http://www.linuxbrit.co.uk/downloads/%{name}-%{version}.tar.gz
-URL:		http://www.linuxbrit.co.uk/feh/
+URL:		https://derf.homelinux.org/~derf/projects/feh/
 Source1:	%{name}-bash-completion
 BuildRequires:	autoconf
 BuildRequires:	automake
