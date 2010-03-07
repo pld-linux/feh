@@ -1,4 +1,5 @@
 Summary:	Fast image viewer/indexer/montager
+Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
 Version:	1.4
@@ -27,6 +28,14 @@ thumbnail browsing or multiple windows, and montages or index prints
 fast dynamic zooming, progressive loading, loading via HTTP (with
 reload support for watching webcams), recursive file opening
 (slideshow of a directory hierarchy), and mousewheel/keyboard control.
+
+%description -l hu.UTF-8
+feh egy gyors, könnyűsúlyú képnézegető, amely az imlib2-t használja.
+Parancssor-orientált és lehetséges több képet is nézni vetítés,
+bélyegkép böngészés vagy több ablakban. További lehetőségek (többek
+között): gyors dinamikus zoom, progresszív betöltés, HTTP protokoll
+(webcam), rekurzív fájl megnyitás (könyvtár-szerkezetben diavetítés)
+és egér-götgetés/billentyűzettel irányítás.
 
 %description -l pl.UTF-8
 feh jest szybką, lekką przeglądarką obrazów która wykorzystuje
