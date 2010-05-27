@@ -2,16 +2,14 @@ Summary:	Fast image viewer/indexer/montager
 Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
-Version:	1.4
-Release:	1
+Version:	1.5
+Release:	0.9
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
-# Source0-md5:	15963b996feed2d7d2213fa08c34ff1e
+# Source0-md5:	aee156f0a82582108c5a56fbe85319ae
 URL:		https://derf.homelinux.org/~derf/projects/feh/
 Source1:	%{name}-bash-completion
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRequires:	giblib-devel >= 1.2.4
 BuildRequires:	imlib2-devel >= 1.0.0
 BuildRequires:	libjpeg-devel
@@ -64,19 +62,16 @@ bashowe dopełnianie linii poleceń programu feh.
 %setup -q
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure
-%{__make}
+%{__make} \
+	CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	PREFIX=$RPM_BUILD_ROOT%{_prefix}
 
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/%{name}
 
 rm -rf $RPM_BUILD_ROOT%{_prefix}/doc
