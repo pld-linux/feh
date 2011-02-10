@@ -2,18 +2,19 @@ Summary:	Fast image viewer/indexer/montager
 Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
-Version:	1.11
+Version:	1.11.2
 Release:	1
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
-# Source0-md5:	c2e2bbd9704af8a8207b1481399e6bdf
+# Source0-md5:	3b2354d78a882ce02b429bbe053467a2
 URL:		https://derf.homelinux.org/~derf/projects/feh/
 Source1:	%{name}-bash-completion
 BuildRequires:	giblib-devel >= 1.2.4
 BuildRequires:	imlib2-devel >= 1.0.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
+BuildRequires:	sed
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXt-devel
 Provides:	WallpaperChanger
@@ -61,6 +62,7 @@ bashowe dopełnianie linii poleceń programu feh.
 
 %prep
 %setup -q
+%{__sed} -i "s,CFLAGS ?=.*,CFLAGS = %{rpmcflags}," config.mk
 
 %build
 %{__make} \
