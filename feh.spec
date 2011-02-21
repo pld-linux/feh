@@ -3,7 +3,7 @@ Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
 Version:	1.11.2
-Release:	2
+Release:	3
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
@@ -49,16 +49,17 @@ Zaawansowane opcje zawierają szybie powiększanie, ładowanie stopniowe,
 rekursywne otwieranie plików (pokaz slajdów z hierarchii katalogów),
 oraz sterowanie z klawiatury/myszki (też z kółkiem).
 
-%package bash-completion
+%package -n bash-completion-feh
 Summary:	bash-completion to feh
 Summary(pl.UTF-8):	bashowe dopełnianie linii poleceń programu feh
 Group:		Applications/Shells
 Requires:	bash-completion
+Obsoletes:	feh-bash-completion
 
-%description bash-completion
+%description -n bash-completion-feh
 bash-completion to feh.
 
-%description bash-completion -l pl.UTF-8
+%description -n bash-completion-feh -l pl.UTF-8
 bashowe dopełnianie linii poleceń programu feh.
 
 %prep
@@ -88,11 +89,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README TODO
+%doc AUTHORS COPYING ChangeLog examples README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/feh
 %{_mandir}/man1/*
 
-%files bash-completion
+%files -n bash-completion-feh
 %defattr(644,root,root,755)
 %{_sysconfdir}/bash_completion.d/%{name}
