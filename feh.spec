@@ -2,12 +2,12 @@ Summary:	Fast image viewer/indexer/montager
 Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
-Version:	1.14.2
+Version:	1.15
 Release:	1
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
-# Source0-md5:	5a64a93ae00f2f4189a6119e835d4452
+# Source0-md5:	e06a695d8ba5b6af37bc01c912d13a5d
 URL:		https://derf.homelinux.org/~derf/projects/feh/
 Patch0:		%{name}-install.patch
 Source1:	%{name}-bash-completion
@@ -82,7 +82,7 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/%{name}
 
-rm -rf $RPM_BUILD_ROOT%{_docdir}/%{name}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING ChangeLog examples README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/feh
-%{_mandir}/man1/*
+%{_mandir}/man1/*.1*
 
 %files -n bash-completion-feh
 %defattr(644,root,root,755)
