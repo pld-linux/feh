@@ -8,7 +8,7 @@ License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
 # Source0-md5:	0684ff2dad34ee328ab2b6b717281787
-URL:		https://derf.homelinux.org/~derf/projects/feh/
+URL:		http://feh.finalrewind.org/
 Patch0:		%{name}-install.patch
 Source1:	%{name}-bash-completion
 BuildRequires:	giblib-devel >= 1.2.4
