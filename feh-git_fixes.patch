@@ -1,0 +1,25 @@
+diff --git a/src/slideshow.c b/src/slideshow.c
+index ba9e028..58992c3 100644
+--- a/src/slideshow.c
++++ b/src/slideshow.c
+@@ -170,18 +170,8 @@ void feh_reload_image(winwidget w, int resize, int force_new)
+ 	winwidget_free_image(w);
+ 
+ 	/* if the image has changed in dimensions - we gotta resize */
+-	if ((feh_load_image(&tmp, FEH_FILE(w->file->data))) == 0) {
+-		if (force_new) {
+-			eprintf("failed to reload image\n");
+-		} else {
+-			im_weprintf(w, "Couldn't reload image. Is it still there?");
+-		}
+-		winwidget_rename(w, title);
+-		free(title);
+-		free(new_title);
+-		filelist = feh_file_remove_from_list(filelist, w->file);
+-		return;
+-	}
++	if ((feh_load_image(&tmp, FEH_FILE(w->file->data))) == 0)
++		eprintf("failed to reload image\n");
+ 
+ 	if (!resize && ((old_w != gib_imlib_image_get_width(tmp)) ||
+ 			(old_h != gib_imlib_image_get_height(tmp))))
