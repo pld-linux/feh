@@ -1,0 +1,19 @@
+--- ./src/imlib.c.org	2011-09-13 10:09:21.351470521 +0200
++++ ./src/imlib.c	2011-09-13 10:09:38.442241678 +0200
+@@ -151,13 +151,14 @@ int feh_load_image(Imlib_Image * im, feh
+ 			/* Http, no reload, slideshow. Let's keep this image on hand... */
+ 			free(file->filename);
+ 			file->filename = estrdup(tmpname);
++
++			if (!opt.keep_http)
++				add_file_to_rm_filelist(tmpname);
+ 		} else {
+ 			/* Don't cache the image if we're doing reload + http (webcams etc) */
+ 			if (!opt.keep_http)
+ 				unlink(tmpname);
+ 		}
+-		if (!opt.keep_http)
+-			add_file_to_rm_filelist(tmpname);
+ 		free(tmpname);
+ 	} else {
+ 		*im = imlib_load_image_with_error_return(file->filename, &err);

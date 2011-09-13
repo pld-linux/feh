@@ -3,13 +3,14 @@ Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
 Version:	1.16.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
 # Source0-md5:	1bb080c7b0021db50884a52161251990
 URL:		http://feh.finalrewind.org/
 Patch0:		%{name}-install.patch
+Patch1:		%{name}-non_memleak.patch
 Source1:	%{name}-bash-completion
 BuildRequires:	giblib-devel >= 1.2.4
 BuildRequires:	imlib2-devel >= 1.0.0
@@ -65,6 +66,7 @@ bashowe dopełnianie linii poleceń programu feh.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 %{__sed} -i "s,CFLAGS ?=.*,CFLAGS = %{rpmcflags}," config.mk
 
 %build
