@@ -55,9 +55,7 @@ Summary(pl.UTF-8):	bashowe dopełnianie linii poleceń programu feh
 Group:		Applications/Shells
 Requires:	bash-completion
 Obsoletes:	feh-bash-completion
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n bash-completion-feh
 bash-completion to feh.
