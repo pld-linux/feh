@@ -2,22 +2,29 @@ Summary:	Fast image viewer/indexer/montager
 Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
-Version:	2.5
-Release:	3
+Version:	3.10
+Release:	1
 License:	BSD
 Group:		X11/Applications/Graphics
-Source0:	https://derf.homelinux.org/~derf/projects/feh/%{name}-%{version}.tar.bz2
-# Source0-md5:	d5f6048f79005c05b51060beafd1f08d
-URL:		http://feh.finalrewind.org/
-# Patch0:		%{name}-install.patch
+Source0:	https://feh.finalrewind.org/%{name}-%{version}.tar.bz2
+# Source0-md5:	8adf6db9c5b18816df5ce539244d2329
+URL:		https://feh.finalrewind.org/
+# Bash completion by https://github.com/scop/bash-completion/blob/master/completions/feh
 Source1:	%{name}-bash-completion
-BuildRequires:	giblib-devel >= 1.2.4
+# zsh completion by https://git.finalrewind.org/zsh/plain/etc/completions/_feh
+Source2:	%{name}-zsh-completion
+BuildRequires:	curl-devel
 BuildRequires:	imlib2-devel >= 1.0.0
+BuildRequires:	libexif-devel
 BuildRequires:	libjpeg-devel
+BuildRequires:	libmagic-devel
 BuildRequires:	libpng-devel
 BuildRequires:	sed >= 4.0
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXt-devel
+Requires:	ImageMagick
+Requires:	imlib2_loaders
 Provides:	WallpaperChanger
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,51 +57,82 @@ rekursywne otwieranie plików (pokaz slajdów z hierarchii katalogów),
 oraz sterowanie z klawiatury/myszki (też z kółkiem).
 
 %package -n bash-completion-feh
-Summary:	bash-completion to feh
-Summary(pl.UTF-8):	bashowe dopełnianie linii poleceń programu feh
+Summary:	Bash completion for feh
+Summary(pl.UTF-8):	Dopełnianie parametrów feh dla powłoki Bash
 Group:		Applications/Shells
-Requires:	bash-completion
+Requires:	bash-completion >= 1:2.0
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	feh-bash-completion
 BuildArch:	noarch
 
 %description -n bash-completion-feh
-bash-completion to feh.
+Bash completion for feh.
 
 %description -n bash-completion-feh -l pl.UTF-8
-bashowe dopełnianie linii poleceń programu feh.
+Dopełnianie parametrów feh dla powłoki Bash.
+
+%package -n zsh-completion-feh
+Summary:	ZSH completion for feh
+Summary(pl.UTF-8):	Dopełnianie parametrów feh dla powłoki ZSH
+Group:		Applications/Shells
+Requires:	%{name} = %{version}-%{release}
+BuildArch:	noarch
+
+%description -n zsh-completion-feh
+ZSH completion for feh.
+
+%description -n zsh-completion-feh -l pl.UTF-8
+Dopełnianie parametrów feh dla powłoki ZSH.
 
 %prep
 %setup -q
-# %patch0 -p1
-%{__sed} -i "s|CFLAGS ?=.*|CFLAGS = %{rpmcflags}|" config.mk
 
 %build
 %{__make} \
-	CC="%{__cc}" \
-	PREFIX=%{_prefix}
+	PREFIX=%{_prefix} \
+	help=1 \
+	inotify=1 \
+	exif=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d
+install -d $RPM_BUILD_ROOT%{zsh_compdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	PREFIX=%{_prefix}
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/%{name}
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/%{name}
+cp -p %{SOURCE2} $RPM_BUILD_ROOT%{zsh_compdir}/_%{name}
 
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_icon_cache hicolor
+%update_desktop_database
+
+%postun
+%update_icon_cache hicolor
+%update_desktop_database
+
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog examples README TODO
+%doc AUTHORS COPYING ChangeLog examples README.md TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/feh
 %{_mandir}/man1/*.1*
+%{_desktopdir}/feh.desktop
+%{_iconsdir}/hicolor/48x48/apps/feh.png
+%{_iconsdir}/hicolor/scalable/apps/feh.svg
 
 %files -n bash-completion-feh
 %defattr(644,root,root,755)
 %{_sysconfdir}/bash_completion.d/%{name}
+
+%files -n zsh-completion-feh
+%defattr(644,root,root,755)
+%{zsh_compdir}/_feh
