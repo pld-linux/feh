@@ -93,9 +93,10 @@ LDFLAGS="%{rpmldflags}" \
 %{__make} \
 	CC="%{__cc}" \
 	PREFIX=%{_prefix} \
+	exif=1 \
 	help=1 \
 	inotify=1 \
-	exif=1
+	magic=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
