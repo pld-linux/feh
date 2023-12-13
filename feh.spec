@@ -88,7 +88,10 @@ Dopełnianie parametrów feh dla powłoki ZSH.
 %setup -q
 
 %build
+CFLAGS="%{rpmcflags} %{rpmcppflags}" \
+LDFLAGS="%{rpmldflags}" \
 %{__make} \
+	CC="%{__cc}" \
 	PREFIX=%{_prefix} \
 	help=1 \
 	inotify=1 \
