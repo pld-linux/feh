@@ -24,8 +24,8 @@ BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXt-devel
-Requires:	ImageMagick
-Requires:	imlib2_loaders
+Suggests:	ImageMagick
+Suggests:	imlib2_loaders
 Provides:	WallpaperChanger
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
