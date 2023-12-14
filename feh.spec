@@ -19,6 +19,7 @@ BuildRequires:	libexif-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libmagic-devel
 BuildRequires:	libpng-devel
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXinerama-devel
