@@ -104,7 +104,11 @@ install -d $RPM_BUILD_ROOT{%{bash_compdir},%{zsh_compdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	PREFIX=%{_prefix}
+	PREFIX="%{_prefix}" \
+	bin_dir="$RPM_BUILD_ROOT%{_bindir}" \
+	man_dir="$RPM_BUILD_ROOT%{_mandir}" \
+	desktop_dir="$RPM_BUILD_ROOT%{_desktopdir}" \
+	icon_dir="$RPM_BUILD_ROOT%{_iconsdir}/hicolor"
 
 cp -p %{SOURCE1} $RPM_BUILD_ROOT%{bash_compdir}/%{name}
 cp -p %{SOURCE2} $RPM_BUILD_ROOT%{zsh_compdir}/_%{name}
