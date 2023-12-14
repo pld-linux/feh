@@ -125,9 +125,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog examples README.md TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/feh
 %{_datadir}/feh
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/feh.1*
 %{_desktopdir}/feh.desktop
 %{_iconsdir}/hicolor/48x48/apps/feh.png
 %{_iconsdir}/hicolor/scalable/apps/feh.svg
