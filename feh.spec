@@ -100,14 +100,13 @@ LDFLAGS="%{rpmldflags}" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d
-install -d $RPM_BUILD_ROOT%{zsh_compdir}
+install -d $RPM_BUILD_ROOT{%{bash_compdir},%{zsh_compdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	PREFIX=%{_prefix}
 
-cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/%{name}
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{bash_compdir}/%{name}
 cp -p %{SOURCE2} $RPM_BUILD_ROOT%{zsh_compdir}/_%{name}
 
 %{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
@@ -135,8 +134,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n bash-completion-feh
 %defattr(644,root,root,755)
-%{_sysconfdir}/bash_completion.d/%{name}
+%{bash_compdir}/%{name}
 
 %files -n zsh-completion-feh
 %defattr(644,root,root,755)
-%{zsh_compdir}/_feh
+%{zsh_compdir}/_%{name}
