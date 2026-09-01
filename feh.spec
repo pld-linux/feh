@@ -2,12 +2,12 @@ Summary:	Fast image viewer/indexer/montager
 Summary(hu.UTF-8):	Gyors képnézegető/indexelő/montázsoló
 Summary(pl.UTF-8):	Szybki program do przeglądania/indeksowania/montowania obrazów
 Name:		feh
-Version:	3.12.2
+Version:	3.12.4
 Release:	1
 License:	BSD
 Group:		X11/Applications/Graphics
 Source0:	https://feh.finalrewind.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	6cc0868b091ea3a73617be64c0a85e27
+# Source0-md5:	c19274935dd8b4d194fce0ddf6d4f812
 URL:		https://feh.finalrewind.org/
 # Bash completion by https://github.com/scop/bash-completion/blob/master/completions/feh
 Source1:	%{name}-bash-completion
